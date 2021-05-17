@@ -99,5 +99,5 @@ func LRD(root *TreeNode) []int {
 		}
 	}
 
-	return nil
+	return result
 }
