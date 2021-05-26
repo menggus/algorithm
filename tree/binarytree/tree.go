@@ -81,14 +81,11 @@ func LRD(root *TreeNode) []int {
 	var lastVisit *TreeNode
 
 	for root != nil || len(stack) != 0 {
-
 		for root != nil {
 			stack = append(stack, root)
 			root = root.Left
 		}
-
 		node := stack[len(stack)-1]
-
 		if node.Right == nil || lastVisit == node.Right { // 说明子树的右节点为空或者已经遍历过了
 			stack = stack[:len(stack)-1] // pop
 			result = append(result, node.V)
@@ -98,6 +95,5 @@ func LRD(root *TreeNode) []int {
 			root = node.Right
 		}
 	}
-
 	return result
 }
